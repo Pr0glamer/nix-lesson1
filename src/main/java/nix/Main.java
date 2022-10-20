@@ -9,9 +9,10 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world! From Mykola");
-        evenNumbers();
-        printDayOfWeek();
+        //System.out.println("Hello world! From Mykola");
+        //evenNumbers();
+        //printDayOfWeek();
+        isPrime(13);
     }
 
     public void printLuckyNumber() {
@@ -25,6 +26,19 @@ public class Main {
                 System.out.println(i);
             }
         }
+    }
+    public static boolean isPrime(int num, int dev) {
+        if(num == 1 || num == dev) {
+            return true;
+        }
+        if(num % dev == 0) {
+            return false;
+        }
+        return isPrime(num, ++dev);
+    }
+
+    public static void isPrime(int num) {
+        System.out.println(isPrime(num, 2) ? String.valueOf(num) + " is prime" : String.valueOf(num) + " is not prime");
     }
 
     public static void printDayOfWeek() {
